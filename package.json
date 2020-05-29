@@ -1,0 +1,53 @@
+{
+  "name": "ownserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "env-cmd -f ./config/dev.env nodemon src/index.js --exec babel-node",
+    "acc": "env-cmd -f ./config/prod.env nodemon src/index.js --exec babel-node",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js --exec babel-node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "apollo-datasource-rest": "^0.8.1",
+    "apollo-server": "^2.9.7",
+    "apollo-server-express": "^2.9.7",
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "deepmerge": "^4.2.2",
+    "env-cmd": "^10.0.1",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "expect": "^25.3.0",
+    "graphql": "^14.5.4",
+    "graphql-iso-date": "^3.6.1",
+    "husky": "^4.2.5",
+    "jsonwebtoken": "^8.5.1",
+    "lint-staged": "^10.1.4",
+    "merge-graphql-schemas": "^1.7.6",
+    "mongoose": "^5.7.0",
+    "nodemon": "^1.19.2",
+    "throng": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/node": "^7.6.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/preset-env": "^7.6.0",
+    "babel-loader": "^8.0.6",
+    "md5": "^2.2.1",
+    "uuid": "^3.3.3",
+    "validator": "^11.1.0"
+  }
+}
