@@ -42,7 +42,7 @@ class CoinAPI extends RESTDataSource {
       : [];
   }
 
-  // async getCrypto(id){
+  // async getCoinById(id){
 
   // }
 

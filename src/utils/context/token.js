@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken';
 import { JWT_LIFETIME, JWT_SECRET } from '../../config/config';
 
+// CREATE TOKEN
 const createToken = userId =>
   new Promise((resolve, reject) => {
     jwt.sign(
@@ -19,6 +20,7 @@ const createToken = userId =>
       }
     );
   });
+// DECODE TOKEN
 const getDecodedToken = token =>
   new Promise((resolve, reject) => {
     jwt.verify(token, JWT_SECRET, (error, decodedToken) => {

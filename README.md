@@ -11,7 +11,7 @@ $ yarn install
 # serve GraphQL playground at localhost:4000/graphql
 $ yarn dev
 
-# Other build commandas: yarn acc to run acceptance || yarn test to run test suite
+# Other build commands: yarn acc to run acceptance || yarn test to run test suite
 $ yarn acc
 $ yarn test
 

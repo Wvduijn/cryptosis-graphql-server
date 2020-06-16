@@ -3,7 +3,7 @@ import express from 'express';
 
 const { ApolloServer } = require('apollo-server-express');
 
-import { getUser } from './utils/context';
+import { getUser } from './utils/context/context';
 import schema from './modules';
 
 import CoinApi from './datasources/crypto';
@@ -17,9 +17,9 @@ const server = new ApolloServer({
   dataSources: () => ({
     coinApi: new CoinApi(),
   }),
-  // context: async ({ req }) => ({
-  //   user: await getUser(req)
-  // })
+  context: async ({ req }) => ({
+    user: await getUser(req)
+  }),
   introspection: true
 });
 
