@@ -5,10 +5,12 @@ import{ makeExecutableSchemaFromModules } from '../utils/modules';
 
 import auth from './auth';
 import marketdata from './marketdata';
+import coin from './coin';
 
 module.exports = makeExecutableSchemaFromModules({
   modules: [
     auth, 
-    marketdata
+    marketdata,
+    coin
   ]
 });
