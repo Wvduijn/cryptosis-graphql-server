@@ -21,7 +21,8 @@ const coinType = gql`
 
   #Queries
   extend type Query {
-    getCoinTop: [Coin]
+    getCoinTop: [Coin],
+    getCoin(id: String!): Coin
   }
 
   extend type Mutation {
