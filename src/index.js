@@ -9,7 +9,8 @@ const startServer = async () => {
     useNewUrlParser: true,
     promiseLibrary: global.Promise,
     useUnifiedTopology: true,
-    useCreateIndex: true
+    useCreateIndex: true,
+    useFindAndModify: false
   };
 
   try {

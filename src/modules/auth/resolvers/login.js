@@ -31,4 +31,4 @@ const login = async (_, { email, password }) => {
   };
 };
 
-module.exports = login;
+export default login;

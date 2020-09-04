@@ -58,12 +58,12 @@ class CoinAPI extends RESTDataSource {
   }
 
   // get Market Chart
-  async getMarketChart() {
+  async getMarketChart(coinId, days = 365) {
     const response = await this.get(`coins/${coinId}/market_chart`, {
       vs_currency: 'eur',
-      days: '365',
+      days: days,
     });
-    return this.coinDetailReducer(response.data);
+    return response.data.prices;
   }
 
   // REDUCERS

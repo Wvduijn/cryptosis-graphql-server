@@ -8,17 +8,21 @@ import schema from './modules';
 
 import CoinApi from './datasources/crypto';
 
+import User from './models/User';
+import Coin from './models/Coin';
+
 const app = express();
 app.use(cors());
 
 const server = new ApolloServer({
   schema,
-  context: ({ req, res }) => ({ req, res }),
   dataSources: () => ({
     coinApi: new CoinApi(),
   }),
   context: async ({ req }) => ({
-    user: await getUser(req)
+    user: await getUser(req),
+    User,
+    Coin
   }),
   introspection: true
 });

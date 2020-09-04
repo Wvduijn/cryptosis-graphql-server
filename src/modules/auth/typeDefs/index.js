@@ -14,6 +14,11 @@ const typeDefs = gql`
     password: String!
     avatar: String
     joinDate: DateTime
+    favorites: WatchList
+  }
+
+  type WatchList {
+    favorites: [String]
   }
 
   extend type Query {
@@ -22,7 +27,6 @@ const typeDefs = gql`
 
   extend type Mutation {
     login(email: String!, password: String!): AuthData
-
     signup(email: String!, password: String!, username: String!): User
   }
 `;

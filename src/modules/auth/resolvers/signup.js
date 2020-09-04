@@ -13,9 +13,7 @@ const signup = async (_, { email, password, username }) => {
     if (existingUser) {
       throw new UserInputError('User already exists');
     }
-    console.log("PASSWORD====", password)
     const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);
-    console.log("HASHED==", hashedPassword);
     password = hashedPassword
 
     const user = await User.create({
@@ -34,4 +32,4 @@ const signup = async (_, { email, password, username }) => {
   }
 };
 
-module.exports = signup;
+export default signup;

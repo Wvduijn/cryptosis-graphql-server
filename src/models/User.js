@@ -31,10 +31,13 @@ const UserSchema = new mongoose.Schema({
     type: Date,
   },
   watchList: {
-    type: [mongoose.Schema.Types.ObjectId],
-    required: true,
-    ref: 'Coin'
+    type: [String]
   }
+  // watchList: {
+  //   type: [mongoose.Schema.Types.ObjectId],
+  //   required: false,
+  //   ref: 'Coin'
+  // }
 });
 
 // Create and add avatar to user
@@ -42,7 +45,5 @@ UserSchema.pre('save', function(next) {
   this.avatar = `https://gravatar.com/avatar/${md5(this.username)}?d=robohash`;
   next();
 });
-
-
 
 export default mongoose.model('User', UserSchema);

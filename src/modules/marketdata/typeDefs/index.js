@@ -11,9 +11,14 @@ const marketDataType = gql`
     market_cap_change_percentage: Float!
   }
 
+  type MarketChart {
+    prices: [Float]
+  }
+
   #Queries
   extend type Query {
     getMarketData: MarketData
+    getMarketChart: MarketChart
   }
 `;
 
