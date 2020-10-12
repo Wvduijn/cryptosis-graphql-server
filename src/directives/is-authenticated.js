@@ -16,7 +16,7 @@ class IsAuthenticatedDirective extends SchemaDirectiveVisitor {
     field.resolve = async function(...args) {
       const context = args[2];
 
-      if (!context || !context.user) {
+      if (!context || !context.currentUser) {
         throw new AuthenticationError('Not allowed');
       }
 

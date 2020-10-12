@@ -6,13 +6,13 @@ import{ makeExecutableSchemaFromModules } from '../utils/modules';
 import auth from './auth';
 import marketdata from './marketdata';
 import coin from './coin';
-// import investment from './investment';
+import investment from './investment';
 
 module.exports = makeExecutableSchemaFromModules({
   modules: [
     auth, 
     marketdata,
-    coin
-    // investment
+    coin,
+    investment
   ]
 });

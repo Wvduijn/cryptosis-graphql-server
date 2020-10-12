@@ -8,7 +8,7 @@ const resolvers = {
   },
   Mutation: {
     addToWatchlist,
-    removeFromWatchlist
+    removeFromWatchlist,
   }
 };
 

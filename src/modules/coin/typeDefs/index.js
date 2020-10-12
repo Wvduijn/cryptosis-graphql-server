@@ -23,13 +23,12 @@ const coinType = gql`
   extend type Query {
     getCoinTop: [Coin],
     getCoin(id: String!): Coin
+    getWatchlist: WatchList
   }
 
   extend type Mutation {
-    addToWatchlist(coinId: String!, username: String!): WatchList
-      @isAuthenticated
-    removeFromWatchlist(coinId: String!, username: String!): WatchList
-      @isAuthenticated
+    addToWatchlist(coinId: String!, username: String!): WatchList @isAuthenticated
+    removeFromWatchlist(coinId: String!, username: String!): WatchList @isAuthenticated
   }
 `;
 

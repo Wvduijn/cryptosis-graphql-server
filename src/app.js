@@ -1,15 +1,22 @@
 import cors from 'cors';
 import express from 'express';
 
-const { ApolloServer } = require('apollo-server-express');
+// Setup Apollo Server
+import { ApolloServer } from 'apollo-server-express';
 
+// Context User
 import { getUser } from './utils/context/context';
-import schema from './modules';
 
+// Datasources
 import CoinApi from './datasources/crypto';
 
+// Models
 import User from './models/User';
 import Coin from './models/Coin';
+import Investment from './models/Investment';
+
+// Schema
+import schema from './modules';
 
 const app = express();
 app.use(cors());
@@ -20,11 +27,13 @@ const server = new ApolloServer({
     coinApi: new CoinApi(),
   }),
   context: async ({ req }) => ({
-    user: await getUser(req),
-    User,
-    Coin
+    currentUser: await getUser(req),
+    // Models on context
+      User,
+      Coin,
+      Investment,
   }),
-  introspection: true
+  introspection: true,
 });
 
 server.applyMiddleware({

@@ -2,46 +2,48 @@ import { gql } from 'apollo-server-express';
 
 const investmentType = gql`
   type Investment {
-    _id:  ID!
-    coinName: String!;
-    amount: Float!,
-    buyPrice: Float!,
-    priceType: priceTypeEnum!,
-    currency: currencyEnum!,
-    buyDate: DateTime!,
+    _id: ID!
+    coinName: String!
+    amount: Float!
+    buyPrice: Float!
+    priceType: priceTypeEnum!
+    currency: currencyEnum!
+    buyDate: DateTime!
     description: String
+    investor: User!
   }
 
   enum priceTypeEnum {
-    PER,
+    PER
     TOTAL
-  },
+  }
 
   enum currencyEnum {
-    EUR,
+    EUR
     USD
   }
 
   input InvestmentInput {
-    coinName: String!;
-    amount: Float!,
-    buyPrice: Float!,
-    priceType: priceTypeEnum!,
-    currency: currencyEnum!,
-    buyDate: DateTime!,
+    coinName: String!
+    amount: Float!
+    buyPrice: Float!
+    priceType: priceTypeEnum!
+    currency: currencyEnum!
+    buyDate: DateTime!
     description: String
   }
 
   #Queries
   extend type Query {
-    getInvestments: [Investment]
-    getInvestment(id: ID!): Investment
+    getInvestments: [Investment] @isAuthenticated
+    getInvestment(id: ID!): Investment @isAuthenticated
   }
 
   extend type Mutation {
-    createInvestment(investment: InvestmentInput!): Investment! @isAuthenticated 
-    editInvestment: Investment! @isAuthenticated
-    deleteInvestment(id:  ID!): Investment! @isAuthenticated       
+    createInvestment(input: InvestmentInput!): Investment! @isAuthenticated
+    editInvestment(id: ID!, input: InvestmentInput!): Investment!
+      @isAuthenticated
+    deleteInvestment(id: ID!): Investment! @isAuthenticated
   }
 `;
 

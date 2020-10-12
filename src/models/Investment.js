@@ -17,22 +17,26 @@ const investmentSchema = new mongoose.Schema({
   },
   priceType: {
     type: String,
-    required: true,
     default: 'TOTAL',
+    required: true,
   },
   currency: {
     type: String,
-    required: true,
     default: 'EUR',
+    required: true,
   },
   buyDate: {
     type: Date,
-    required: true,
     default: Date.now,
+    required: true,
   },
   description: {
     type: String,
-  }
+  },
+  investor: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+  },
 });
 
 export default mongoose.model('Investment', investmentSchema);

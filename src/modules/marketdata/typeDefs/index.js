@@ -1,7 +1,6 @@
 import { gql } from 'apollo-server-express';
 
 const marketDataType = gql`
-  
   type MarketData {
     active_cryptocurrencies: Int!
     markets: Int!
@@ -18,7 +17,7 @@ const marketDataType = gql`
   #Queries
   extend type Query {
     getMarketData: MarketData
-    getMarketChart: MarketChart
+    getMarketChart(coinId: String!): MarketChart
   }
 `;
 

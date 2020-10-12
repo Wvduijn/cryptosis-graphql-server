@@ -1,6 +1,6 @@
-const me = async (_, args, { user }) => ({
-  ...user._doc,
-  id: user.id
+const me = async (_, args, { currentUser }) => ({
+  ...currentUser._doc,
+  id: currentUser.id
 });
 
 export default me;

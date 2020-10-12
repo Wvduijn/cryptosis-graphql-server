@@ -28,7 +28,7 @@ const startServer = async () => {
   }
 };
 
-// Let's make Node.js clustered for beter multi-core performance
+// make Node.js clustered for beter multi-core performance
 throng(
   {
     workers: config.WORKERS,
