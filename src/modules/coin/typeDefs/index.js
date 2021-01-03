@@ -16,7 +16,7 @@ const coinType = gql`
     ath: Float!
     ath_change_percentage: Float!
     ath_date: DateTime
-    sparkline_data: Float!
+    sparkline_data: [Float!]
   }
 
   #Queries
