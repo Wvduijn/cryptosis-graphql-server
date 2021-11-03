@@ -49,6 +49,6 @@
     "babel-loader": "^8.0.6",
     "md5": "^2.2.1",
     "uuid": "^3.3.3",
-    "validator": "^11.1.0"
+    "validator": "^13.7.0"
   }
 }
