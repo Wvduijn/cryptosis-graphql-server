@@ -33,7 +33,7 @@
     "graphql": "^14.5.4",
     "graphql-iso-date": "^3.6.1",
     "husky": "^4.2.5",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "lint-staged": "^10.1.4",
     "merge-graphql-schemas": "^1.7.6",
     "mongoose": "^5.7.0",
